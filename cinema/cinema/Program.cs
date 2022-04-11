@@ -2,11 +2,14 @@ using cinema.Data;
 using cinema.Models;
 using cinema.Services;
 using Microsoft.EntityFrameworkCore;
-using cinema.Models;
 using cinema.Repositories;
+using Microsoft.AspNetCore.Identity;
+using cinema.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = builder.Configuration.GetConnectionString("userContextConnection");builder.Services.AddDbContext<userContext>(options =>
+    options.UseSqlServer(connectionString));builder.Services.AddDefaultIdentity<cinemaUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<userContext>();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
@@ -33,21 +36,20 @@ builder.Services.AddScoped<ISubscriberRepository, SubscriberRepository>();
 
 // load .env file
 var root = Directory.GetCurrentDirectory();
-var dotenv = Path.Combine(root, "../../.env");
+var dotenv = Path.Combine(root, "../../Env.env");
 DotEnv.Load(dotenv);
 
 // Add DbContext
 
 var env = Environment.GetEnvironmentVariables();
 
-var connectionString = "Data Source="+env["hostname"]+";" +
-                       "User ID="+env["username"]+";" +
-                       "Password="+env["password"]+";" +
-                       "Database="+env["database"]+"";
+var connString = "Data Source=" + env["hostname"] + ";" +
+                       "Initial Catalog=" + env["database"] + ";" +
+                       "Integrated Security=SSPI;";
 
 builder.Services
-    .AddDbContext<CinemaContext>(options => options.UseSqlServer(connectionString));
-
+    .AddDbContext<CinemaContext>(options => options.UseSqlServer(connString));
+ 
 
 var app = builder.Build();
 
@@ -55,6 +57,7 @@ using (var scope = app.Services.CreateScope())
 {
     //running migrations at startup
     var db = scope.ServiceProvider.GetRequiredService<CinemaContext>();
+    
     db.Database.Migrate();
     //adding seeddata
     if ((string) env["seeddata"]! ==  "true")
@@ -75,7 +78,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

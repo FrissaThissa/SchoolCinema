@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema-unit-testing/cinema-unit-testing.csproj": {}
+    "D:\\GitHub\\SchoolCinema\\cinema\\cinema-unit-testing\\cinema-unit-testing.csproj": {}
   },
   "projects": {
-    "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema-unit-testing/cinema-unit-testing.csproj": {
+    "D:\\GitHub\\SchoolCinema\\cinema\\cinema-unit-testing\\cinema-unit-testing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema-unit-testing/cinema-unit-testing.csproj",
+        "projectUniqueName": "D:\\GitHub\\SchoolCinema\\cinema\\cinema-unit-testing\\cinema-unit-testing.csproj",
         "projectName": "cinema-unit-testing",
-        "projectPath": "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema-unit-testing/cinema-unit-testing.csproj",
-        "packagesPath": "/home/jeroen/.nuget/packages/",
-        "outputPath": "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema-unit-testing/obj/",
+        "projectPath": "D:\\GitHub\\SchoolCinema\\cinema\\cinema-unit-testing\\cinema-unit-testing.csproj",
+        "packagesPath": "C:\\Users\\thijs\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\SchoolCinema\\cinema\\cinema-unit-testing\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/jeroen/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\thijs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema/cinema.csproj": {
-                "projectPath": "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema/cinema.csproj"
+              "D:\\GitHub\\SchoolCinema\\cinema\\cinema\\cinema.csproj": {
+                "projectPath": "D:\\GitHub\\SchoolCinema\\cinema\\cinema\\cinema.csproj"
               }
             }
           }
@@ -78,33 +84,36 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/jeroen/.dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema/cinema.csproj": {
+    "D:\\GitHub\\SchoolCinema\\cinema\\cinema\\cinema.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema/cinema.csproj",
+        "projectUniqueName": "D:\\GitHub\\SchoolCinema\\cinema\\cinema\\cinema.csproj",
         "projectName": "cinema",
-        "projectPath": "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema/cinema.csproj",
-        "packagesPath": "/home/jeroen/.nuget/packages/",
-        "outputPath": "/home/jeroen/Development/School/macrohard/macrohard-code-jeroen/cinema/cinema/obj/",
+        "projectPath": "D:\\GitHub\\SchoolCinema\\cinema\\cinema\\cinema.csproj",
+        "packagesPath": "C:\\Users\\thijs\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\SchoolCinema\\cinema\\cinema\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/jeroen/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\thijs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -123,31 +132,57 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.2, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.28, )"
+            },
+            "MySql.Data.EntityFramework": {
+              "target": "Package",
+              "version": "[8.0.28, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Stripe.net": {
               "target": "Package",
@@ -172,7 +207,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/jeroen/.dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
