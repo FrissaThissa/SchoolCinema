@@ -1,0 +1,156 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = cinema
+build_property.RootNamespace = cinema
+build_property.ProjectDir = D:\Sourcetree\macrohard-code\cinema\cinema\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Sourcetree\macrohard-code\cinema\cinema
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Snippets/ShowsFilter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = U25pcHBldHNcU2hvd3NGaWx0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Home/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Movies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Movies/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Movies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Movies/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Movies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Payment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Rooms/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Rooms/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Rooms/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Rooms/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Rooms/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/RoomTemplates/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVRlbXBsYXRlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/RoomTemplates/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVRlbXBsYXRlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/RoomTemplates/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVRlbXBsYXRlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/RoomTemplates/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVRlbXBsYXRlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/RoomTemplates/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVRlbXBsYXRlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Shows/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Shows/Daily.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd3NcRGFpbHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Shows/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Shows/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Shows/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Shows/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Tickets/Arrangements.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xBcnJhbmdlbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Tickets/Discount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xEaXNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Tickets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Tickets/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Tickets/Quantity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xRdWFudGl0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Tickets/Reservation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xSZXNlcnZhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/Tickets/SeatSelection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xTZWF0U2VsZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sourcetree/macrohard-code/cinema/cinema/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
