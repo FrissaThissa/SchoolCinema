@@ -7,9 +7,27 @@ using Microsoft.AspNetCore.Identity;
 using cinema.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("userContextConnection");builder.Services.AddDbContext<userContext>(options =>
-    options.UseSqlServer(connectionString));builder.Services.AddDefaultIdentity<cinemaUser>(options => options.SignIn.RequireConfirmedAccount = true)
+
+// load .env file
+var root = Directory.GetCurrentDirectory();
+var dotenv = Path.Combine(root, "../../Env.env");
+DotEnv.Load(dotenv);
+
+// Add DbContext
+
+var env = Environment.GetEnvironmentVariables();
+
+var connectionString = "Data Source=" + env["hostname"] + ";" +
+                       "Initial Catalog=" + env["database"] + ";" +
+                       "Integrated Security=SSPI;";
+
+builder.Services.AddDbContext<userContext>(options =>
+    options.UseSqlServer(connectionString));
+builder.Services.AddDefaultIdentity<cinemaUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<userContext>();
+builder.Services
+    .AddDbContext<CinemaContext>(options => options.UseSqlServer(connectionString));
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
@@ -33,24 +51,6 @@ builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 builder.Services.AddScoped<IRoomTemplatesRepository, RoomTemplatesRepository>();
 builder.Services.AddScoped<ISubscriberRepository, SubscriberRepository>();
 
-
-// load .env file
-var root = Directory.GetCurrentDirectory();
-var dotenv = Path.Combine(root, "../../Env.env");
-DotEnv.Load(dotenv);
-
-// Add DbContext
-
-var env = Environment.GetEnvironmentVariables();
-
-var connString = "Data Source=" + env["hostname"] + ";" +
-                       "Initial Catalog=" + env["database"] + ";" +
-                       "Integrated Security=SSPI;";
-
-builder.Services
-    .AddDbContext<CinemaContext>(options => options.UseSqlServer(connString));
- 
-
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -66,6 +66,8 @@ using (var scope = app.Services.CreateScope())
         SeedData.Initialize(services);
     }
 }
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
