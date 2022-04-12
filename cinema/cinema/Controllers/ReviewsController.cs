@@ -19,7 +19,8 @@ namespace cinema.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<Review> reviews = _reviewService.GetAllReviews();
+            return View(reviews);
         }
 
         // GET: Reviews/Create/Avatar
@@ -37,6 +38,14 @@ namespace cinema.Controllers
         {
             _reviewService.CreateReview(moviename, User.Identity.Name, rating, comment);
             return View("Thanks");
+        }
+
+        [Authorize]
+        public IActionResult Delete(int id)
+        {
+            Review review = _reviewService.GetReviewById(id);
+            _reviewService.DeleteReview(review);
+            return RedirectToAction("Index");
         }
     }
 }

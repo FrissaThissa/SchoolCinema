@@ -9,7 +9,7 @@
 <h1>Voorstellingen</h1>
 @foreach(var movie in Model.Keys)
 {
-    <h4>@movie.Name</h4>
+    <h4><a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Name">@movie.Name</a></h4>
     <table class="table table-bordered text-white">
         <thead>
             <td>Tijd</td>
@@ -23,7 +23,16 @@
                 if (show.StartTime.Date != DateTime.Now.Date)
                     continue;
                 <tr>
-                    <td>@show.StartTime</td>
+                    <td>
+                        <form method="get" class="show-button" asp-controller="Tickets" asp-action="Arrangements">
+                            <input type="hidden" name="showId" value="@show.Id"/>
+
+                            <button class="btn btn-primary" type="submit">
+                                @TimeOnly.FromDateTime(show.StartTime).Hour.00
+                            </button>
+
+                        </form>
+                    </td>
                     <td>@show.Room</td>
                     <td>@show.ThreeD</td>
                     <td>@ViewBag.AvailableSeatsPerShow[show]</td>

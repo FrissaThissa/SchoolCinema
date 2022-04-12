@@ -1,4 +1,5 @@
 ﻿@using cinema.Models
+@model IEnumerable<Review>
 
 @{
     ViewData["Title"] = "Reviews";
@@ -6,3 +7,29 @@
 }
 
 <h1>Reviews</h1>
+<table class="table table-bordered text-white">
+    <thead>
+        <td></td>
+        <td>Author</td>
+        <td>Movie</td>
+        <td>Rating</td>
+        <td>Comment</td>
+    </thead>
+    <tbody>
+        @foreach(Review review in Model)
+        {
+            <tr>
+                <td><a asp-action="Delete" asp-route-id="@review.Id"><b>X</b></a></td>
+                <td>@review.Username</td>
+                <td>@{
+                        if (review.Movie != null)
+                        {
+                            <p>@review.Movie.Name</p>
+                        }
+                    }</td>
+                <td>@review.Rating</td>
+                <td>@review.Comment</td>
+            </tr>
+        }
+    </tbody>
+</table>

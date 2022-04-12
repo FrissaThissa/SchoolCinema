@@ -15,8 +15,6 @@
 <div class="container mb-5">
     <div class="poster-image">
         <img src="@Html.DisplayFor(model => model.Poster)" alt="Sample Image" style="height:500px;width:300px;"/>
-        <h3>Rating: @Html.DisplayFor(model => model.Rating)</h3>
-        <a asp-controller="Reviews" asp-action="Create" asp-route-id="@Model.Name">Review schrijven</a>
     </div>
     <div class="movie-info">
         <div class="border">
@@ -122,4 +120,20 @@
         </div>
     </div>
     <div style="clear: both"></div>
+</div>
+<div class="row">
+    <h3>Rating: @Html.DisplayFor(model => model.Rating)</h3>
+    <h2>Reviews:</h2>
+    @for(int i = 0; i < 3; i++)
+    {
+        if (ViewBag.Reviews != null && i >= ViewBag.Reviews.Count)
+            break;
+
+        <div class="float-left" style="width:33%;">
+            <b>@ViewBag.Reviews[i].Username</b>
+            <p>Rating: @ViewBag.Reviews[i].Rating</p>
+            <p>@ViewBag.Reviews[i].Comment</p>
+        </div>
+    }
+    <a asp-controller="Reviews" asp-action="Create" asp-route-id="@Model.Name">Review schrijven</a>
 </div>

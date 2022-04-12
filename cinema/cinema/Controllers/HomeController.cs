@@ -32,9 +32,11 @@ public class HomeController : Controller
             //Voorstellingen
             actions.Add(new string[] {"Voorstellingen", "Shows", "Index"});
             //Films
-            actions.Add(new string[] { "Films", "Movies", "Index" });
+            actions.Add(new string[] {"Films", "Movies", "Index"});
             //Reserveringen
             actions.Add(new string[] { "Reserveringen", "Reservation", "Index" });
+            //Reviews
+            actions.Add(new string[] { "Reviews", "Reviews", "Index" });
             //Gevonden voorwerpen
             actions.Add(new string[] { "Gevonden voorwerpen", "FoundItems", "Index" });
             //Gebruikers

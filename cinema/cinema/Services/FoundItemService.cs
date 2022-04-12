@@ -25,5 +25,16 @@ namespace cinema.Services
             _context.FoundItems.Add(foundItem);
             _context.SaveChanges();
         }
+
+        public void DeleteFoundItem(int id)
+        {
+            _context.FoundItems.Remove(GetFoundItemById(id));
+            _context.SaveChanges();
+        }
+
+        public FoundItem GetFoundItemById(int id)
+        {
+            return _context.FoundItems.Where(x => x.Id == id).FirstOrDefault();
+        }
     }
 }

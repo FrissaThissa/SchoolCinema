@@ -33,5 +33,12 @@ namespace cinema.Controllers
             _foundItemService.CreateFoundItem(description, image);
             return RedirectToAction("Index");
         }
+
+        [Authorize]
+        public IActionResult Delete(int id)
+        {
+            _foundItemService.DeleteFoundItem(id);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -2,6 +2,7 @@
 using cinema.Identity;
 using cinema.Models;
 using cinema.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace cinema.Services
 {
@@ -15,9 +16,15 @@ namespace cinema.Services
             _movieRepository = movieRepository;
         }
 
+        public List<Review> GetAllReviews()
+        {
+            List<Review> reviews = _context.Reviews.Include(r => r.Movie).ToList();
+            return reviews;
+        }
+
         public List<Review> GetMovieReviews(Movie movie)
         {
-            return _context.Reviews.Where(r => r.Movie == movie).ToList();
+            return _context.Reviews.Where(r => r.Movie == movie).Include(r => r.Movie).ToList();
         }
 
         public int GetMovieRating(Movie movie)
@@ -47,6 +54,17 @@ namespace cinema.Services
             _context.SaveChanges();
             movie.Rating = GetMovieRating(movie);
             _context.Movies.Update(movie);
+            _context.SaveChanges();
+        }
+
+        public Review GetReviewById(int id)
+        {
+            return _context.Reviews.Where(r => r.Id == id).FirstOrDefault();
+        }
+
+        public void DeleteReview(Review review)
+        {
+            _context.Reviews.Remove(review);
             _context.SaveChanges();
         }
     }

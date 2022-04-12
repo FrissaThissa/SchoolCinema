@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Rollen";
 }
-<h1>List of Roles</h1>
-<a asp-action="Create">Create</a>
+<h1>Rollen</h1>
+<a asp-action="Create">Nieuwe rol</a>
 <table class="table table-bordered text-white">
     <thead>
         <tr>
-            <td>Id</td>
+            <td></td>
             <td>Name</td>
         </tr>
     </thead>
@@ -15,7 +15,7 @@
         @foreach (var role in Model)
         {
             <tr>
-                <td>@role.Id</td>
+                <td><a asp-action="Delete" asp-route-id="@role.Id"><b>X</b></a></td>
                 <td>@role.Name</td>
             </tr>
         }

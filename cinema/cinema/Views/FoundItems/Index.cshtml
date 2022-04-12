@@ -11,6 +11,7 @@
 <table class="table table-bordered text-white">
     <thead>
         <tr>
+            <td></td>
             <td>Beschrijving</td>
             <td>Afbeelding</td>
         </tr>
@@ -19,6 +20,7 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td><a asp-action="Delete" asp-route-id="@item.Id"><b>X</b></a></td>
                 <td>@item.Description</td>
                 <td>@item.Image</td>
             </tr>

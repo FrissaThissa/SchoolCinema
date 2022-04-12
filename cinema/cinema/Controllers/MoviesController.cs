@@ -9,22 +9,25 @@ using Microsoft.EntityFrameworkCore;
 using cinema.Data;
 using cinema.Models;
 using cinema.Repositories;
+using cinema.Services;
 
 namespace cinema.Controllers
 {
     public class MoviesController : Controller
     {
         private readonly IMovieRepository _movieRepository;
+        private readonly IReviewService _reviewService;
 
-        public MoviesController(IMovieRepository movieRepository)
+        public MoviesController(IMovieRepository movieRepository, IReviewService reviewService)
         {
             _movieRepository = movieRepository;
+            _reviewService = reviewService;
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _movieRepository.ListOfAllMovies());
+            return View(_movieRepository.ListOfAllMovies());
         }
 
         // GET: Movies/Details/5
@@ -40,6 +43,7 @@ namespace cinema.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Reviews = _reviewService.GetMovieReviews(movie);
 
             return View(movie);
         }

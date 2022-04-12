@@ -4,20 +4,20 @@
     ViewData["Title"] = "Homepagina";
 }
 
-@section Styles
-{
-    <link rel="stylesheet" href="~/css/Home.css" asp-append-version="true"/>
-}
-
 <h1>Medewerker Dashboard</h1>
 
 <div class="row">
     @{
-        foreach(var action in ViewBag.Actions)
+        foreach(string[] action in ViewBag.Actions)
         {
+            string name = action[0];
+            string controller = action[1];
+            string act = action[2];
             <div class="float-left" style="width:25%;height:100px;">
-                <div class="rounded border-2 border-light text-center">
-                    <a class="nav-link" asp-controller="@action[1]" asp-action="@action[2]">@action[0]</a>
+                <div class="border border-light" style="height:80%;">
+                    <div class="mx-auto text-center">
+                        <a class="nav-link" asp-controller="@controller" asp-action="@act"><h4>@name</h4></a>
+                    </div>
                 </div>
             </div>
         }

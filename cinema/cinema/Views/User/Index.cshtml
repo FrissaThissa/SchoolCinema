@@ -3,10 +3,11 @@
     ViewData["Title"] = "Index";
 }
 <h1>Gebruikers</h1>
-<a asp-action="Create">Create</a>
+<a asp-action="Create">Nieuwe gebruiker</a>
 <table class="table table-bordered text-white">
     <thead>
         <tr>
+            <td></td>
             <td>Voornaam</td>
             <td>Achternaam</td>
             <td>Email</td>
@@ -16,6 +17,7 @@
         @foreach (var user in Model)
         {
             <tr>
+                <td><a asp-action="Delete" asp-route-id="@user.Id"><b>X</b></a></td>
                 <td>@user.FirstName</td>
                 <td>@user.LastName</td>
                 <td>@user.Email</td>
