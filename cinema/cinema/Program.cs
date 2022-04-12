@@ -32,6 +32,10 @@ builder.Services.AddAuthorization(options =>
     policy.RequireRole("Admin")
     );
 
+    options.AddPolicy("usermanagement", policy =>
+    policy.RequireRole("Admin")
+    );
+
     options.AddPolicy("employee", policy =>
     policy.RequireRole("Admin", "Kassamedewerker", "Back-office medewerker", "Manager")
     );

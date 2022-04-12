@@ -79,10 +79,6 @@ namespace cinema.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-
-            [Required]
-            [Display(Name = "User Role")]
-            public string UserRole { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -95,11 +91,11 @@ namespace cinema.Areas.Identity.Pages.Account
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
-            var role = _roleManager.FindByIdAsync(Input.UserRole).Result;
+            var role = _roleManager.FindByNameAsync("Abbonementhouder").Result;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new CinemaIdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new CinemaIdentityUser { UserName = Input.Email, Email = Input.Email, FirstName = Input.FirstName, LastName = Input.LastName };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

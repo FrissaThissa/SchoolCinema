@@ -39,10 +39,15 @@ public class HomeController : Controller
             actions.Add(new string[] { "Reviews", "Reviews", "Index" });
             //Gevonden voorwerpen
             actions.Add(new string[] { "Gevonden voorwerpen", "FoundItems", "Index" });
-            //Gebruikers
-            actions.Add(new string[] { "Gebruikers", "User", "Index" });
-            //Rollen
-            actions.Add(new string[] { "Rollen", "Role", "Index" });
+
+            var userManagement = await _authorizationService.AuthorizeAsync(User, "usermanagement");
+            if (userManagement.Succeeded)
+            {
+                //Gebruikers
+                actions.Add(new string[] { "Gebruikers", "User", "Index" });
+                //Rollen
+                actions.Add(new string[] { "Rollen", "Role", "Index" });
+            }
 
             ViewBag.Actions = actions;
 
