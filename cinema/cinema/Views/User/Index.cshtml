@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CinemaIdentityUser>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Gebruikers</h1>
+<a asp-action="Create">Create</a>
+<table class="table table-bordered text-white">
+    <thead>
+        <tr>
+            <td>Voornaam</td>
+            <td>Achternaam</td>
+            <td>Email</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>

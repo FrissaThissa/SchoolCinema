@@ -11,6 +11,7 @@ using cinema.Models;
 using cinema.Services;
 using cinema.Filters;
 using cinema.Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace cinema.Controllers
 {
@@ -18,17 +19,30 @@ namespace cinema.Controllers
     {
         private readonly IShowRepository _showRepository;
         private readonly IShowService _showService;
+        private readonly IAuthorizationService _authorizationService;
 
-        public ShowsController(IShowRepository showRepository, IShowService service)
+        public ShowsController(IShowRepository showRepository, IShowService service, IAuthorizationService authorizationService)
         {
             
             _showRepository = showRepository;
             _showService = service;
+            _authorizationService = authorizationService;
         }
 
         // GET: Shows
         public async Task<IActionResult> Index()
         {
+            var isEmployee = await _authorizationService.AuthorizeAsync(User, "employee");
+            if (isEmployee.Succeeded)
+            {
+                Dictionary<Movie, List<Show>> showsPerMovie = _showService.GetShowsPerMovie();
+                Dictionary<Show, int> availableSeatsPerShow = new Dictionary<Show, int>();
+                foreach(List<Show> shows in showsPerMovie.Values)
+                    foreach(Show show in shows)
+                        availableSeatsPerShow.Add(show, _showService.GetAvailableSeatAmount(show));
+                ViewBag.AvailableSeatsPerShow = availableSeatsPerShow;
+                return View("Employee", showsPerMovie);
+            }
 
             var showList = _showRepository.ListOfShowsPerDate();
             var showPerMoviePerDateDict = _showService.GetShowsPerMoviePerDay(showList);

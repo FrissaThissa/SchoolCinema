@@ -1,0 +1,28 @@
+﻿@using cinema.Models
+@model IEnumerable<TicketOrder>
+
+@{
+    ViewData["Title"] = "Reserveringen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Reserveringen</h1>
+<table class="table table-bordered text-white">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Show</td>
+            <td>Tickets</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model)
+        {
+            <tr>
+                <td><a asp-controller="Tickets" asp-action="Index" asp-route-id="@reservation.Id">@reservation.Id</a></td>
+                <td>@reservation.ShowId</td>
+                <td>@reservation.SerializedTicketIds</td>
+            </tr>
+        }
+    </tbody>
+</table>

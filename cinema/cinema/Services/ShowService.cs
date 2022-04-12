@@ -6,10 +6,35 @@ namespace cinema.Services;
 public class ShowService : IShowService
 {
     private readonly IShowRepository _showRepository;
+    private readonly IRoomService _roomService;
+    private readonly ITicketRepository _ticketRepository;
 
-    public ShowService(IShowRepository showRepository)
+    public ShowService(IShowRepository showRepository, IRoomService roomService, ITicketRepository ticketRepository)
     {
         _showRepository = showRepository;
+        _roomService = roomService;
+        _ticketRepository = ticketRepository;
+    }
+
+    public Dictionary<Movie, List<Show>> GetShowsPerMovie()
+    {
+        Dictionary<Movie, List<Show>> result = new Dictionary<Movie, List<Show>>();
+        List<Show> shows = _showRepository.FindAllIncludeMovie().ToList();
+        foreach(Show show in shows)
+        {
+            if(result.ContainsKey(show.Movie))
+                result[show.Movie].Add(show);
+            else
+                result.Add(show.Movie, new List<Show> { show });
+        }
+        return result;
+    }
+
+    public int GetAvailableSeatAmount(Show show)
+    {
+        int totalseats = _roomService.GetTotalSeatAmount(_roomService.GetShowRoom(show));
+        int takenseats = _ticketRepository.FindTicketsByShow(show).Count();
+        return totalseats - takenseats;
     }
 
     public Dictionary<DateOnly, Dictionary<Movie, List<Show>>> GetShowsPerMoviePerDay(List<Show> showList)

@@ -4,10 +4,10 @@ using cinema.Services;
 using Microsoft.EntityFrameworkCore;
 using cinema.Repositories;
 using Microsoft.AspNetCore.Identity;
-using cinema.Areas.Identity.Data;
+using cinema.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // load .env file
 var root = Directory.GetCurrentDirectory();
 var dotenv = Path.Combine(root, "../../Env.env");
@@ -21,12 +21,22 @@ var connectionString = "Data Source=" + env["hostname"] + ";" +
                        "Initial Catalog=" + env["database"] + ";" +
                        "Integrated Security=SSPI;";
 
-builder.Services.AddDbContext<userContext>(options =>
-    options.UseSqlServer(connectionString));
-builder.Services.AddDefaultIdentity<cinemaUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<userContext>();
 builder.Services
     .AddDbContext<CinemaContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDefaultIdentity<CinemaIdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<CinemaContext>();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("rolecreation", policy =>
+    policy.RequireRole("Admin")
+    );
+
+    options.AddPolicy("employee", policy =>
+    policy.RequireRole("Admin", "Kassamedewerker", "Back-office medewerker", "Manager")
+    );
+});
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -37,10 +47,12 @@ builder.Services.AddScoped<IPriceCalculatingService, PriceCalculatingService>();
 builder.Services.AddScoped<IShowService, ShowService>();
 builder.Services.AddScoped<ITimeService, TimeService>();
 builder.Services.AddScoped<IRoomService, RoomService>();
-
+builder.Services.AddScoped<IReservationService, ReservationService>();
+builder.Services.AddScoped<IFoundItemService, FoundItemService>();
+builder.Services.AddScoped<IAuthorizationService, DefaultAuthorizationService>();
 builder.Services.AddScoped<IPaymentAdapter, PaymentAdapter>();
 builder.Services.AddScoped<IMovieService, MovieService>();
-
+builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IShowRepository, ShowRepository>();
 builder.Services.AddScoped<ITicketRepository, TicketRepository>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();

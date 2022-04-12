@@ -22,5 +22,14 @@ namespace cinema.Services
         {
             return _roomRepository.findRoomByShow(show);
         }
+
+        public int GetTotalSeatAmount(Room room)
+        {
+            int[] rows = JsonSerializer.Deserialize<int[]>(room.Template.Setting);
+            int amount = 0;
+            foreach (var row in rows)
+                amount += row;
+            return amount;
+        }
     }
 }

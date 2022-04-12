@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace cinema.Data
 {
-    public class CinemaContext : IdentityDbContext<CinemaIdentityUser, CinemaIdentityRole, string>
+    public class CinemaContext : IdentityDbContext<CinemaIdentityUser>
     {
         public CinemaContext(DbContextOptions<CinemaContext> options)
             : base(options)
@@ -20,6 +20,7 @@ namespace cinema.Data
         public DbSet<Ticket>? Tickets { get; set; }
         public DbSet<TicketOrder>? Orders { get; set; }
         public DbSet<Subscriber>? Subscribers { get; set; }
-
+        public DbSet<Review>? Reviews { get; set; }
+        public DbSet<FoundItem>? FoundItems { get; set; }
     }
 }

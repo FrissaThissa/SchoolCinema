@@ -1,0 +1,34 @@
+﻿@using cinema.Models
+@model Dictionary<Movie, List<Show>>
+
+@{
+    ViewData["Title"] = "Voorstellingen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Voorstellingen</h1>
+@foreach(var movie in Model.Keys)
+{
+    <h4>@movie.Name</h4>
+    <table class="table table-bordered text-white">
+        <thead>
+            <td>Tijd</td>
+            <td>Zaal</td>
+            <td>3D</td>
+            <td>Beschikbare plaatsen</td>
+        </thead>
+        <tbody>
+            @foreach(var show in Model[movie])
+            {
+                if (show.StartTime.Date != DateTime.Now.Date)
+                    continue;
+                <tr>
+                    <td>@show.StartTime</td>
+                    <td>@show.Room</td>
+                    <td>@show.ThreeD</td>
+                    <td>@ViewBag.AvailableSeatsPerShow[show]</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

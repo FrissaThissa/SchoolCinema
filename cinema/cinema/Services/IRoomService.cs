@@ -6,5 +6,6 @@ namespace cinema.Services
     {
         public Room GetShowRoom(Show show);
         public int[] GetRoomTemplate(Room room);
+        public int GetTotalSeatAmount(Room room);
     }
 }

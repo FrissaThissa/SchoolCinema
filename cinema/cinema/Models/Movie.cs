@@ -18,4 +18,5 @@ public class Movie
     public string Language { get; set; }
     public bool ThreeD { get; set; }
     public string Kijkwijzer { get; set; } 
+    public int Rating { get; set; }
 }

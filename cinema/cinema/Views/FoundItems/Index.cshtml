@@ -1,0 +1,27 @@
+﻿@using cinema.Models
+@model IEnumerable<cinema.Models.FoundItem>
+
+@{
+    ViewData["Title"] = "Gevonden voorwerpen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Gevonden voorwerpen</h1>
+<a asp-action="Create">Nieuw gevonden voorwerp</a>
+<table class="table table-bordered text-white">
+    <thead>
+        <tr>
+            <td>Beschrijving</td>
+            <td>Afbeelding</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Description</td>
+                <td>@item.Image</td>
+            </tr>
+        }
+    </tbody>
+</table>
